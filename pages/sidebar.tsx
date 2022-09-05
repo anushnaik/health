@@ -4,7 +4,6 @@ import {faClipboardList, faGear, faUser, faUserGroup} from "@fortawesome/free-so
 import type { NextPage } from 'next'
 import styles from '../styles/sidebar.module.css'
 import Image from 'next/image'
-import logo from  '../images/logo.jpg'
 import Link from 'next/link'
 
 const sidebar: NextPage = () => {
@@ -15,11 +14,7 @@ const sidebar: NextPage = () => {
       
     <div className={styles.sidebar}>
     <li>
-    <Image className={styles.logoimage}
-           src={logo}
-           width="0px"
-           height="0px"
-            /> <p className={styles.h3}>HEALTH</p>
+   <p className={styles.h3}>HEALTH</p>
              <div className={styles.line}></div>
        </li>
         <li>

@@ -5,8 +5,8 @@ const Forgot = () => {
         <div>
 <Link href="/">Back</Link>
             <h2 className={styles.forgot}>Forgot your Password</h2>
-            <p className={styles.forgot1}>Enter your email address, and we'll send you an</p>
-            <p className={styles.forgot2}>email with all the instructions </p>
+            <p className={styles.forgot1}>{"Enter your email address, and we'll send you an"}</p>
+            <p className={styles.forgot2}>{"email with all the instructions"} </p>
       <h4 className={styles.forgot3}>Email</h4>
       <input className={styles.emailfield1} type="text" placeholder="" />
       <br></br>

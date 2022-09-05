@@ -59,7 +59,7 @@ const Login = () => {
         LOGIN
         </button>
       <p className={styles.policy}>
-        By signing in you agree to Health <a className={styles.terms} href="/Termsofservice">Terms of service</a> and  <a className={styles.terms} href="/Privacypolicy">Privacy policy</a>  {" "}
+        By signing in you agree to Health <Link className={styles.terms} href="/Termsofservice">Terms of service</Link> and  <Link className={styles.terms} href="/Privacypolicy">Privacy policy</Link>  {" "}
       </p>
       <p className={styles.forgotPassword}>
         <Link href="/forgot"><a>Forgot Your Password</a></Link>
