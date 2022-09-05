@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {SetStateAction, useState} from 'react'
 import { Icon } from 'react-icons-kit'
 import {eye} from 'react-icons-kit/feather/eye'
 import {eyeOff} from 'react-icons-kit/feather/eyeOff'
@@ -19,7 +19,7 @@ const Login = () => {
     setMessage("Email is Empty");
   }
   };
-  const handleonChange = (e) => {
+  const handleonChange = (e: { target: { value: SetStateAction<string>; }; }) => {
     setEmail(e.target.value);
   };
 
