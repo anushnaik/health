@@ -139,18 +139,6 @@ const Admin = () => {
         />
       </Box>
       <Paper>
-      <Grid
-        rows={rows}
-        columns={columns}
-      >
-        <SelectionState/>
-        <Table />
-        
-        <TableHeaderRow />
-        
-        <TableSelection />
-     
-      </Grid>
     </Paper>
       </div>
       </div>
