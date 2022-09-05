@@ -1,0 +1,143 @@
+.container {
+    width: 1440px;
+    display: flex;
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    position: absolute;
+    width: 1440px;
+    height: 64px;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+    transition: margin-left 0.5s;
+    border-bottom-width: thin;
+    border-bottom-color: #f1f1f1;
+    border-bottom-style: solid;
+    margin-left: 60px;
+    overflow: hidden;
+}
+
+.box1 {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 0px;
+    position: absolute;
+    width: 1440px;
+    height: 91px;
+    left: 0px;
+    top: 65px;
+    background: #FFFFFF;
+    transition: margin-left 0.5s;
+    border-bottom-width: thin;
+    border-bottom-color: #f1f1f1;
+    border-bottom-style: solid;
+    margin-left: 60px;
+}
+
+.grid {
+    position: absolute;
+    width: 1339px;
+    height: 46px;
+    left: 80px;
+    top: 176px;
+    background: #F3F4F6;
+    border-radius: 0px;
+    border: none;
+}
+
+.search {
+    box-sizing: border-box;
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 13px 20px;
+    width: 562.58px;
+    height: 50px;
+    /* cool-gray/50 */
+    background: #F9FAFB;
+    /* cool-gray/200 */
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 9px 13px;
+    gap: 8px;
+    width: 150px;
+    height: 39px;
+    color:white;
+    background:black;
+    border-radius: 12px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.adminbtn {
+    width: 59px;
+    height: 24px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    border-radius:10px;
+    text-align: center;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.probtn {
+    width: 59px;
+    height: 24px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    border-radius:10px;
+    text-align: center;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.sortIcon {
+    width: 38px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.option {
+    position: absolute;
+    left: 45.83%;
+    right: 45.83%;
+    top: 16.67%;
+    bottom: 75%;
+    border: 2px solid #000000;
+}
+
+.avatar {
+    margin-left:1200px;
+    height:20px;
+    width:20px;
+}

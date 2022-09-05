@@ -1,0 +1,352 @@
+.title {
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  left: 850px;
+  top: 180px;
+  font-family: "Arial";
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 52px;
+  text-align: center;
+  color: #212121;
+}
+
+.email {
+  position: absolute;
+  width: 32px;
+  height: 15px;
+  left: 834px;
+  top: 292px;
+  font-family: "Arial";
+  font-weight: 600;
+  font-size: 15px;
+  color: #212121;
+}
+.emailfield {
+  position: absolute;
+  width: 450px;
+  height: 30px;
+  left: 834px;
+  top: 361px;
+  border: none;
+  border-bottom: solid 1px #212121;
+
+}
+
+.password {
+  position: absolute;
+  width: 57px;
+  height: 15px;
+  left: 833px;
+  top: 412px;
+  font-family: "Arial";
+  font-weight: 600;
+  font-size: 15px;
+  color: #212121;
+}
+
+.passwordfield {
+  position: absolute;
+  width: 450px;
+  height: 30px;
+  left: 834px;
+  top: 460px;
+  border: none;
+  border-bottom: solid 1px #212121;
+}
+
+.warning {
+  position: absolute;
+  width: 297px;
+  height: 17px;
+  left: 834px;
+  top: 492px;
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #212121;
+}
+
+.login {
+  position: absolute;
+  width: 450px;
+  height: 50px;
+  left: 834px;
+  top: 561px;
+  background-color: rgb(0, 119, 255);
+  border-radius: 4px;
+  border: none;
+  color: white;
+}
+
+.forgotPassword {
+  position: absolute;
+  width: 600px;
+  height: 17px;
+  left: 787px;
+  top: 650px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #1996fc;
+}
+
+.sendButton {
+  position: center;
+  font-family:Arial;
+  width: 300px;
+  height: 50px;
+  left: 834px;
+  top: 561px;
+  background-color:#1996fc;
+  border-radius: 4px;
+  border: none;
+  color: white;
+}
+.sendforgButton {
+  position: center;
+  font-family:Arial;
+  margin-left: 620px;
+  width: 400px;
+  height: 50px;
+  left: 834px;
+  top: 561px;
+  background-color:#1996fc;
+  border-radius: 4px;
+  border: none;
+  color: white;
+}
+.forgot {
+  margin-top: 80px;
+  margin-left: 625px;
+  font-family:Arial;
+  font-weight:bold;
+  
+  
+}
+.forgot1 {
+  margin-left: 625px;
+  font-family:Arial;
+  font-weight:normal;
+  
+}
+.forgot2 {
+  margin-left: 355px;
+  text-align: center;
+  font-family:Arial;
+  font-weight:normal;
+  
+}
+.forgot3 {
+  padding:10px;
+
+  margin-left: 615px;
+  font-size: 15px;
+  font-family:Arial;
+  font-weight:normal;
+  color:grey;
+  
+}
+
+.forgot4 {
+  padding-left: 200px;
+  margin-left: 615px;
+  font-size: 15px;
+  font-family:Arial;
+  font-weight:normal;
+  color:grey;
+}
+
+.cancel {
+  padding:10px;
+
+  margin-left:795px;
+  font-size: 15px;
+  font-family:Arial;
+  font-weight:normal;
+  color:grey;
+  
+}
+
+.emailresend {
+    margin-left: 630px;
+    font-family:Arial;
+    font-weight:normal;
+}
+
+.image {
+  position: absolute;
+  width: 676px;
+  height: 901px;
+  right: 426px;
+  top: 0px;
+  background: url(../Images/Abc.png);
+}
+
+.card {
+  position: absolute;
+}
+
+.emailcheck {
+  font-family: Arial;
+}
+.clicktoresend {
+  color: #1996fc;
+}
+.passreset {
+  position: center;
+  font-family:Arial;
+  font-style: normal;
+  font-size: 10px;
+  width: 300px;
+  height: 50px;
+  left: 834px;
+  top: 561px;
+  background-color: rgb(0, 119, 255);
+  border-radius: 4px;
+  border: none;
+  color: white;
+}
+
+.wrapper {
+  width: 87vw;
+  height: 115vh;
+  left: 890px;
+  background-color:white;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  overflow: hidden;
+}
+
+.wrapper1 {
+  width: 118vw;
+  height: 3vh;
+  bottom: 60vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.wrapper2 {
+  width: 118vw;
+  height: 3vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.inputfield {
+  width: 330px;
+  height: 55px;
+  background-color: white;
+  border-radius: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  box-shadow: white 0px 5px 15px;  
+}
+
+.inputfield input {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: hidden;
+  outline: none;
+  font-size: 18px;
+  text-indent: 2px;
+  padding: 5px;  
+}
+
+.inputfield span {
+  cursor: pointer;
+}
+.message {
+  text-align:right;
+  right: 690px;
+  font-size:20px;
+  height:4vh;
+  font-family: Arial;
+  color:red;
+  font-weight: bold;
+}
+.policy {
+  position: absolute;
+  width: 1200px;
+  height: 17px;
+  left: 840px;
+  top: 610px;
+
+
+}
+.emailfield1 {
+  margin-left: 620px;
+  width: 400px;
+  height: 30px;
+  left: 834px;
+  top: 361px;
+  border: none;
+  border-bottom: solid 1px #212121;
+
+}
+
+.emailfield2 {
+  width: 300px;
+  height: 30px;
+  left: 834px;
+  top: 251px;
+  border: none;
+  border-bottom: solid 1px #212121;
+
+}
+
+.emailfield3 {
+  position: absolute;
+  width: 300px;
+  height: 30px;
+  left: 400px;
+  top: 251px;
+  border: none;
+  border-bottom: solid 1px #212121;
+
+}
+.terms {
+  color:rgb(0, 119, 255);
+}
+.tos {
+  margin-left:180px;
+  font-family:Arial;
+}
+.pp {
+  font-family:Arial;
+  margin-left:180px;
+  content: normal;
+}
+
+.dive {
+  text-align: center;
+}
+.admin {
+  font-weight: bold;
+  font-family: Arial;
+}
+
+.adduser {
+  width: 100px;
+  height: 40px;
+  left: 890px;
+  background-color: black;
+  border-radius: 10px;
+  border: none;
+  color: white;
+}
