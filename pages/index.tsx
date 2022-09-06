@@ -4,6 +4,8 @@ import {eye} from 'react-icons-kit/feather/eye'
 import {eyeOff} from 'react-icons-kit/feather/eyeOff'
 import styles from '../styles/Home.module.css';
 import Link from 'next/link'
+import Image from 'next/image'
+import ABC from '../Images/ABC.png'
 
 
 const Login = () => {
