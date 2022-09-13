@@ -3,8 +3,11 @@ import React from 'react'
 import {faClipboardList, faGear, faUser, faUserGroup} from "@fortawesome/free-solid-svg-icons"
 import type { NextPage } from 'next'
 import styles from '../styles/sidebar.module.css'
+import logo from '../Images/logo.jpg'
 import Image from 'next/image'
 import Link from 'next/link'
+import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
+import { AiOutlineDown } from 'react-icons/Ai';
 
 const sidebar: NextPage = () => {
  
@@ -14,7 +17,12 @@ const sidebar: NextPage = () => {
       
     <div className={styles.sidebar}>
     <li>
-   <p className={styles.h3}>HEALTH</p>
+    <Image
+           src={logo}
+           width="50px"
+           height="50px"
+           alt='Logo'
+            /> <h3 className={styles.health}> HEALTH</h3>
              <div className={styles.line}></div>
        </li>
         <li>
@@ -26,10 +34,9 @@ const sidebar: NextPage = () => {
        left: "4px",
       top: "4px"
       }} 
-      />  <Link href="/Admin">
-      <a className={styles.adminl}> Admin_Users </a>
+      /> <Link href='/Admin'> 
+      <a className={styles.adminl}> Admin_User </a>
       </Link>
-      
      </div>
      </li>
      <li>
@@ -41,7 +48,7 @@ const sidebar: NextPage = () => {
         left: "4.8000030517578125px",
         top: "4px"
        }}/> <Link href='/Projects'>
-         <a className={styles.projectsl}> Projects  </a>
+         <a className={styles.projectsl}> Projects </a>
          </Link>
        </div>
        </li>
@@ -54,7 +61,7 @@ const sidebar: NextPage = () => {
         left: "18px",
         top: "192px",
        }}
-       /> <Link href='/admin'> 
+       /> <Link href='/Employees'> 
        <a className={styles.employeel}> Employees </a></Link>
        </div>
       </li>
@@ -67,8 +74,26 @@ const sidebar: NextPage = () => {
         left: "2.400299072265625px",
         top: "2.4000244140625px" 
       }}
-      /><Link href='/admin'>
-         <a className={styles.settingl}> Settings </a></Link>
+      /><Link href='/Settings'>
+         <a className={styles.settingl}> Settings{""} <AiOutlineDown /></a></Link>
+      </div>
+      </li>
+      <li>
+      <div className={styles.skill}>
+    <Link href='/Skill'>
+         <a className={styles.settingl}> Skills </a></Link>
+      </div>
+      </li>
+      <li>
+      <div className={styles.projecttype}>
+      <Link href='/Project-type'>
+         <a className={styles.projecttypel}> Project Type </a></Link>
+      </div>
+      </li>
+      <li>
+      <div className={styles.employeetype}>
+      <Link href='/Employee-type'>
+         <a className={styles.employeetypel}> Employee Type </a></Link>
       </div>
       </li>
       </div>

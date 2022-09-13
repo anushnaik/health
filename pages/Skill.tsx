@@ -6,21 +6,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import Head from 'next/head';
 import Paper from '@mui/material/Paper';
+import { Grid, PagingPanel, Table, TableHeaderRow, TableSelection,} from '@devexpress/dx-react-grid-material-ui';
+import { SelectionState } from '@devexpress/dx-react-grid';
 import { useRouter } from "next/router";
+import {FiMoreVertical} from "react-icons/fi";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import NorthIcon from '@mui/icons-material/North';
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
-import Modal from "../pages/Addusermodal";
 import { IconButton } from '@mui/material';
+import Modal from "../pages/Addskillmodal";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 import Grow from "@mui/material/Grow";
 import Popper from "@mui/material/Popper";
 import MenuItem from "@mui/material/MenuItem";
 import MenuList from "@mui/material/MenuList";
 
-const Admin = () => {
+const Skill = () => {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
 
@@ -49,42 +53,26 @@ const Admin = () => {
     prevOpen.current = open;
   }, [open]);
 
-
   const [modalOpen, setModalOpen] = useState(false);
-  const [modalOpen1, setModalOpen1] = useState(false);
     const router = useRouter();
     const columns = [
-      { field: 'id', headerName: 'User ID', width: 90 },
       {
-        field: 'name',
+        field: 'sname',
         headerName: 'Name',
         width: 200,
         editable: true,
       },
       {
-        field: 'email',
-        headerName: 'Email',
-        width: 250,
+        field: 'description',
+        headerName: 'Description',
+        width: 400,
         editable: true,
-      },
-      {
-        field: 'phone',
-        headerName: 'Phone',
-        type: 'number',
-        width: 190,
-        editable: true,
-      },
-      {
-        field: 'roles',
-        headerName: 'Roles',
-        sortable: false,
-        width: 200,
       },
       {
         field: 'status',
         headerName: 'Status',
-        sortable: false,
-        width: 160,
+        width: 200,
+        editable: true,
       },
       {
         field: "option",
@@ -103,20 +91,17 @@ const Admin = () => {
         filterable: false,
       },
     ];
-      
+
     const rows = [
-           { id: 1, name: 'Jackson', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles:"Admin",status:"-",options:'...'},
-           { id: 2, name: 'James', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"invite sent",options:<MoreVertIcon/> },
-           { id: 3, name: 'Mary', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"Rejected",options:<MoreVertIcon/> },
-           { id: 4, name: 'Michael', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"Active",options:<MoreVertIcon/> },
-           { id: 5, name: 'Jackson', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"-",options:<MoreVertIcon/>},
-           { id: 6, name: 'James', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"invite sent",options:<MoreVertIcon/> },
-           { id: 7, name: 'Mary', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"Rejected",options:<MoreVertIcon/> },
-           { id: 8, name: 'Michael', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"Active",options:<MoreVertIcon/> },
-           { id: 9, name: 'Jackson', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"-",options:<MoreVertIcon/>},
-           { id: 10, name: 'James', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"invite sent",options:<MoreVertIcon/> },
-           { id: 11, name: 'Mary', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"Rejected",options:<MoreVertIcon/> },
-           { id: 12, name: 'Michael', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles:"Admin",status:"Active",options:<MoreVertIcon/> },
+      { id: 1, sname: 'Jackson', description: 'Lorem ipum is simply dummy text of printing...', status:'Active',options:<MoreVertIcon/> },
+      { id: 2, sname: 'Jackson', description: 'Lorem ipum is simply dummy text of printing...', status:'Active',options:<MoreVertIcon/> },
+      { id: 3, sname: 'Jackson', description: 'Lorem ipum is simply dummy text of printing...', status:'Active',options:<MoreVertIcon/> },
+      { id: 4, sname: 'Jackson', description: 'Lorem ipum is simply dummy text of printing...', status:'Active',options:<MoreVertIcon/> },
+      { id: 5, sname: 'Jackson', description: 'Lorem ipum is simply dummy text of printing...', status:'Active',options:<MoreVertIcon/> },
+      { id: 6, sname: 'Jackson', description: 'Lorem ipum is simply dummy text of printing...', status:'Active',options:<MoreVertIcon/> },
+      { id: 7, sname: 'Jackson', description: 'Lorem ipum is simply dummy text of printing...', status:'Active',options:<MoreVertIcon/> },
+      { id: 8, sname: 'Jackson', description: 'Lorem ipum is simply dummy text of printing...', status:'Active',options:<MoreVertIcon/> },
+      { id: 9, sname: 'Jackson', description: 'Lorem ipum is simply dummy text of printing...', status:'Active',options:<MoreVertIcon/> },
     ];
    
   return (
@@ -125,6 +110,7 @@ const Admin = () => {
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     </Head>
      <Sidebar />
+
 
      <div className={styles.container}>
      <div className={styles.box} >
@@ -162,13 +148,13 @@ const Admin = () => {
            order:"0",
            flexGrow:"0"
         }}>
-          Admin Users</label>
+          Skills</label>
         <input type="text" className={styles.search} style={{alignContent:"center", justifyContent:"center", marginLeft:"250px", marginTop:"-45px" }} placeholder="Search"></input>
-        <button className="openModalBtn" style={{ marginLeft:"1290px", marginTop:"-20px", backgroundColor:"black", color:"white", borderRadius:"12px",
+        <button className="openModalBtn" style={{ marginLeft:"1250px", marginTop:"-20px", backgroundColor:"black", color:"white", borderRadius:"12px", width:"180px",height:"35px",
       }}
         onClick={() => {
           setModalOpen(true);
-        }}>+ Add User</button>
+        }}>+ Add Skill</button>
         {modalOpen && <Modal setOpenModal={setModalOpen} />}
       </div>
       <div className={styles.grid}>
@@ -198,7 +184,7 @@ const Admin = () => {
           <Grow
             {...TransitionProps}
             style={{
-              marginLeft:"1290px",
+              marginLeft:"990px",
               marginTop:"240px",
               transformOrigin:
                 placement === "bottom-start" ? "left top" : "left bottom"
@@ -212,9 +198,7 @@ const Admin = () => {
                   aria-labelledby="composition-button"
                   onKeyDown={handleListKeyDown}
                 >
-                  <MenuItem onClick={() => {
-          setModalOpen1(true);
-        }}>View</MenuItem> {modalOpen1 && <Modal setOpenModal={setModalOpen1} />}
+                  <MenuItem onClick={handleClose}>View</MenuItem>
                   <MenuItem onClick={handleClose}>Archive</MenuItem>
                   <MenuItem onClick={handleClose}>Delete</MenuItem>
                 </MenuList>
@@ -228,4 +212,4 @@ const Admin = () => {
   </>
   )
 }
-export default Admin
+export default Skill

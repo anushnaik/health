@@ -6,10 +6,13 @@ import styles from '../styles/Home.module.css';
 import Link from 'next/link'
 import Image from 'next/image'
 import ABC from '../Images/ABC.png'
+import axios from "axios";
+import nookies from 'nookies'
 
 
 const Login = () => {
   const [email, setEmail]=useState("");
+  const [password, setPassword]=useState("");
   const [message, setMessage]=useState("");
   const emailvalidation = () => {
     const regEx =/[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;

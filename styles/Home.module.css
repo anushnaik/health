@@ -181,13 +181,12 @@
 }
 
 .image {
-  background-image: url(../Images/ABC.png);
   position: absolute;
   width: 676px;
   height: 901px;
   right: 426px;
   top: 0px;
-  
+  background: url(../Images/Abc.png);
 }
 
 .card {
@@ -218,8 +217,8 @@
 .wrapper {
   width: 87vw;
   height: 115vh;
-  left: 890px;
   background-color:white;
+  margin-right:100px;
   display: flex;
   justify-content: right;
   align-items: center;

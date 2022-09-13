@@ -1,0 +1,93 @@
+import { TextField } from "@mui/material";
+import React from "react";
+import styles from '../styles/Addprojectmodal.module.css';
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
+import {useState} from 'react';
+import { Button } from "react-bootstrap";
+
+
+
+
+function Addprojectmodal(setOpenModal:any) {
+
+  const [value, setValue] = useState()
+  return (
+    <div className={styles.modalBackground}>
+      <div className={styles.modalContainer}>
+        <div className={styles.titleCloseBtn}>
+          <button
+            onClick={() => {
+              setOpenModal(false);
+            }}
+          >x
+          </button>
+        </div>
+        <div className={styles.title}>
+          <h4>Add Project</h4>
+        </div>
+        <div>
+          Name
+            <TextField className={styles.Name} id="outlined-basic" placeholder="Name" variant="outlined" size="small" /><br/>
+            Client
+            <TextField className={styles.Email} id="outlined-basic" placeholder="Client"  variant="outlined" size="small" /><br/>
+            <div className={styles.row}>
+              <div className={styles.column}>
+              Project type
+              <select className={styles.Role} id="outlined-basic">
+        <option>Role</option>
+        <option>Role</option>
+        <option>Role</option>
+        </select>
+      </div>
+      <div className={styles.column}>
+              Project Responsible
+              <select className={styles.Role} id="outlined-basic">
+        <option>Role</option>
+        <option>Role</option>
+        <option>Role</option>
+        </select>
+      </div>
+        <div className={styles.column}>
+          Start Date
+        <TextField className={styles.Date} id="outlined-basic" placeholder="Name" variant="outlined" size="small" type="date" />
+        </div>
+        <div className={styles.column}>
+          End Date
+        <TextField className={styles.Date} id="outlined-basic" placeholder="Name" variant="outlined" size="small" type="date" />
+        </div>
+        <div className={styles.column}>
+              Project Status
+              <select className={styles.Role} id="outlined-basic">
+        <option>Role</option>
+        <option>Role</option>
+        <option>Role</option>
+        </select>
+      </div>
+      <div className={styles.column}>
+        Monthly Status
+      <select className={styles.Role} id="outlined-basic">
+        <option>Role</option>
+        <option>Role</option>
+        <option>Role</option>
+        </select>
+        </div>
+</div>
+        </div>
+        <div className={styles.footer}>
+          <button
+            onClick={() => {
+              setOpenModal1(false);
+            }}
+            id="cancelBtn"
+          >
+            Cancel
+          </button>
+          <button>Invite user</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Addprojectmodal;

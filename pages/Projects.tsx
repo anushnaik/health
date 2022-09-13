@@ -6,21 +6,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import Head from 'next/head';
 import Paper from '@mui/material/Paper';
+import { Grid, PagingPanel, Table, TableHeaderRow, TableSelection,} from '@devexpress/dx-react-grid-material-ui';
+import { SelectionState } from '@devexpress/dx-react-grid';
 import { useRouter } from "next/router";
+import {FiMoreVertical} from "react-icons/fi";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import NorthIcon from '@mui/icons-material/North';
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
-import Modal from "../pages/Addusermodal";
 import { IconButton } from '@mui/material';
-import ClickAwayListener from "@mui/material/ClickAwayListener";
+import Modal from "../pages/Addprojectmodal";
 import Grow from "@mui/material/Grow";
 import Popper from "@mui/material/Popper";
 import MenuItem from "@mui/material/MenuItem";
 import MenuList from "@mui/material/MenuList";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
 
-const Admin = () => {
+const Projects = () => {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
 
@@ -49,40 +53,56 @@ const Admin = () => {
     prevOpen.current = open;
   }, [open]);
 
-
   const [modalOpen, setModalOpen] = useState(false);
-  const [modalOpen1, setModalOpen1] = useState(false);
     const router = useRouter();
+
     const columns = [
-      { field: 'id', headerName: 'User ID', width: 90 },
+      { field: 'id', headerName: 'Project Id', width: 90 },
       {
-        field: 'name',
+        field: 'pname',
         headerName: 'Name',
         width: 200,
         editable: true,
       },
       {
-        field: 'email',
-        headerName: 'Email',
+        field: 'client',
+        headerName: 'Client',
         width: 250,
         editable: true,
       },
       {
-        field: 'phone',
-        headerName: 'Phone',
-        type: 'number',
+        field: 'projecttype',
+        headerName: 'Project Type',
         width: 190,
         editable: true,
       },
       {
-        field: 'roles',
-        headerName: 'Roles',
+        field: 'projectresponsible',
+        headerName: 'Project Responsible',
         sortable: false,
         width: 200,
       },
       {
-        field: 'status',
-        headerName: 'Status',
+        field: 'startdate',
+        headerName: 'Start Date',
+        sortable: false,
+        width: 160,
+      },
+      {
+        field: 'enddate',
+        headerName: 'End Date',
+        sortable: false,
+        width: 160,
+      },
+      {
+        field: 'projectstatus',
+        headerName: 'Project Status',
+        sortable: false,
+        width: 160,
+      },
+      {
+        field: 'monthlystatus',
+        headerName: 'Monthly Status',
         sortable: false,
         width: 160,
       },
@@ -105,18 +125,11 @@ const Admin = () => {
     ];
       
     const rows = [
-           { id: 1, name: 'Jackson', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles:"Admin",status:"-",options:'...'},
-           { id: 2, name: 'James', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"invite sent",options:<MoreVertIcon/> },
-           { id: 3, name: 'Mary', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"Rejected",options:<MoreVertIcon/> },
-           { id: 4, name: 'Michael', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"Active",options:<MoreVertIcon/> },
-           { id: 5, name: 'Jackson', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"-",options:<MoreVertIcon/>},
-           { id: 6, name: 'James', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"invite sent",options:<MoreVertIcon/> },
-           { id: 7, name: 'Mary', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"Rejected",options:<MoreVertIcon/> },
-           { id: 8, name: 'Michael', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"Active",options:<MoreVertIcon/> },
-           { id: 9, name: 'Jackson', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"-",options:<MoreVertIcon/>},
-           { id: 10, name: 'James', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"invite sent",options:<MoreVertIcon/> },
-           { id: 11, name: 'Mary', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"Rejected",options:<MoreVertIcon/> },
-           { id: 12, name: 'Michael', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles:"Admin",status:"Active",options:<MoreVertIcon/> },
+      { id: 1, pname: 'Jackson', client: 'Michael David', projecttype:'lorem Ipsum', projectresponsible:'lorem Ipsum', startdate:'01 Aug 2022', enddate:'24 sep 2022', projectstatus:'Running', monthlystatus:'Behind Schedule', options:<MoreVertIcon/> },
+      { id: 2, pname: 'Jackson', client: 'Michael David', projecttype:'lorem Ipsum', projectresponsible:'lorem Ipsum', startdate:'01 Aug 2022', enddate:'24 sep 2022', projectstatus:'Running', monthlystatus:'Behind Schedule', options:<MoreVertIcon/> },
+      { id: 3, pname: 'Jackson', client: 'Michael David', projecttype:'lorem Ipsum', projectresponsible:'lorem Ipsum', startdate:'01 Aug 2022', enddate:'24 sep 2022', projectstatus:'Running', monthlystatus:'Behind Schedule', options:<MoreVertIcon/> },
+      { id: 4, pname: 'Jackson', client: 'Michael David', projecttype:'lorem Ipsum', projectresponsible:'lorem Ipsum', startdate:'01 Aug 2022', enddate:'24 sep 2022', projectstatus:'Running', monthlystatus:'Behind Schedule', options:<MoreVertIcon/> },
+      { id: 5, pname: 'Jackson', client: 'Michael David', projecttype:'lorem Ipsum', projectresponsible:'lorem Ipsum', startdate:'01 Aug 2022', enddate:'24 sep 2022', projectstatus:'Running', monthlystatus:'Behind Schedule', options:<MoreVertIcon/> },
     ];
    
   return (
@@ -125,6 +138,7 @@ const Admin = () => {
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     </Head>
      <Sidebar />
+
 
      <div className={styles.container}>
      <div className={styles.box} >
@@ -162,13 +176,13 @@ const Admin = () => {
            order:"0",
            flexGrow:"0"
         }}>
-          Admin Users</label>
+          Projects</label>
         <input type="text" className={styles.search} style={{alignContent:"center", justifyContent:"center", marginLeft:"250px", marginTop:"-45px" }} placeholder="Search"></input>
-        <button className="openModalBtn" style={{ marginLeft:"1290px", marginTop:"-20px", backgroundColor:"black", color:"white", borderRadius:"12px",
+        <button className="openModalBtn" style={{ marginLeft:"1270px", marginTop:"-20px", backgroundColor:"black", color:"white", borderRadius:"12px",width:"150px",height:"35px",
       }}
         onClick={() => {
           setModalOpen(true);
-        }}>+ Add User</button>
+        }}>+ Add Projects</button>
         {modalOpen && <Modal setOpenModal={setModalOpen} />}
       </div>
       <div className={styles.grid}>
@@ -198,7 +212,7 @@ const Admin = () => {
           <Grow
             {...TransitionProps}
             style={{
-              marginLeft:"1290px",
+              marginLeft:"1350px",
               marginTop:"240px",
               transformOrigin:
                 placement === "bottom-start" ? "left top" : "left bottom"
@@ -212,9 +226,7 @@ const Admin = () => {
                   aria-labelledby="composition-button"
                   onKeyDown={handleListKeyDown}
                 >
-                  <MenuItem onClick={() => {
-          setModalOpen1(true);
-        }}>View</MenuItem> {modalOpen1 && <Modal setOpenModal={setModalOpen1} />}
+                  <MenuItem onClick={handleClose}>View</MenuItem>
                   <MenuItem onClick={handleClose}>Archive</MenuItem>
                   <MenuItem onClick={handleClose}>Delete</MenuItem>
                 </MenuList>
@@ -228,4 +240,4 @@ const Admin = () => {
   </>
   )
 }
-export default Admin
+export default Projects
