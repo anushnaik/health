@@ -1,8 +1,8 @@
 import { TextField } from "@mui/material";
 import React from "react";
 import styles from '../styles/Addemployeemodal.module.css';
-import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
+import 'react-phone-number-input/style.css';
+import PhoneInput from 'react-phone-number-input';
 import {useState} from 'react';
 
 const Addemployeemodal = ( setOpenModal:any ) => {
@@ -29,6 +29,11 @@ const Addemployeemodal = ( setOpenModal:any ) => {
           <div className={styles.row}>
             <div className={styles.column}>
             Phone Number
+            <PhoneInput className={styles.Phone}
+    placeholder="Enter Phone Number"
+    value={value}
+    onChange ={setValue}
+    />
     </div>
     <div className={styles.column}>
       Joining Date
