@@ -29,11 +29,6 @@ const Addemployeemodal = ( setOpenModal:any ) => {
           <div className={styles.row}>
             <div className={styles.column}>
             Phone Number
-            <PhoneInput className={styles.Phone}
-    placeholder="Enter Phone Number"
-    value={value}
-    onChange ={setValue}
-    />
     </div>
     <div className={styles.column}>
       Joining Date
