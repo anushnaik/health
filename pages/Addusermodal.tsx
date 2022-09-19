@@ -30,10 +30,7 @@ function Addusermodal({ setOpenModal }:any) {
             Phone
             <div className={styles.row}>
               <div className={styles.column}>
-            <PhoneInput className={styles.Phone}
-      placeholder="Enter Phone Number"
-      value={value}
-      onChange="setValue"/>
+              <TextField className={styles.Phone} id="outlined-basic" placeholder="Phone Number" variant="outlined" size="small" /><br />
       </div>
       <div className={styles.column}>
       <select className={styles.Role} id="outlined-basic">
