@@ -9,7 +9,7 @@ import Box from '@mui/material/Box';
 
 
 
-function Addskillmodal(setOpenModal:any) {
+function Addskillmodal({setOpenModal}:any) {
 
   const [value, setValue] = useState()
   return (

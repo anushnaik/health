@@ -12,18 +12,23 @@ import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
-import Modal from "../pages/Addusermodal";
+import Addusermodal from "../pages/Addusermodal";
+import Viewusermodal from "../pages/Viewusermodal";
+import Logout from "../pages/Logout";
 import { IconButton } from '@mui/material';
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 import Grow from "@mui/material/Grow";
 import Popper from "@mui/material/Popper";
 import MenuItem from "@mui/material/MenuItem";
 import MenuList from "@mui/material/MenuList";
+import axios from 'axios';
+import Button from '@mui/material/Button';
+
 
 const Admin = () => {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
-
+  const [dataa,setdataa] = useState<any>([])
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
@@ -51,9 +56,34 @@ const Admin = () => {
 
 
   const [modalOpen, setModalOpen] = useState(false);
-  const [modalOpen1, setModalOpen1] = useState(false);
+  const [modalOpenV, setModalOpenV] = useState(false);
+  React.useEffect(() => {
+    Api()
+  },[])
+  
+const Api= () => {
+  var token= localStorage.getItem("token")
+  console.log(token,"from itemlist")
+
+const payload= {
+  headers:{
+    Accept: "application/json",
+    "Content-Type": "application/json",
+    Authorization:`${localStorage.getItem("token")}`
+  }
+};
+try {
+const response= axios.get('https://tranquil-hamlet-54124.herokuapp.com/user_profiles',payload)
+ response.then((res:any) => {console.log("",res.data)
+ setdataa(res.data);
+});
+}
+catch(error:any){
+  console.error("Error:",error)
+}
+}
     const router = useRouter();
-    const columns = [
+    const columns: GridColDef[] = [
       { field: 'id', headerName: 'User ID', width: 90 },
       {
         field: 'name',
@@ -105,18 +135,18 @@ const Admin = () => {
     ];
       
     const rows = [
-           { id: 1, name: 'Jackson', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles:"Admin",status:"-",options:'...'},
-           { id: 2, name: 'James', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"invite sent",options:<MoreVertIcon/> },
-           { id: 3, name: 'Mary', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"Rejected",options:<MoreVertIcon/> },
-           { id: 4, name: 'Michael', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"Active",options:<MoreVertIcon/> },
-           { id: 5, name: 'Jackson', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"-",options:<MoreVertIcon/>},
-           { id: 6, name: 'James', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"invite sent",options:<MoreVertIcon/> },
-           { id: 7, name: 'Mary', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"Rejected",options:<MoreVertIcon/> },
-           { id: 8, name: 'Michael', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"Active",options:<MoreVertIcon/> },
-           { id: 9, name: 'Jackson', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"-",options:<MoreVertIcon/>},
-           { id: 10, name: 'James', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"invite sent",options:<MoreVertIcon/> },
-           { id: 11, name: 'Mary', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"Rejected",options:<MoreVertIcon/> },
-           { id: 12, name: 'Michael', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles:"Admin",status:"Active",options:<MoreVertIcon/> },
+           { id: 1, name: 'Jackson', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles:"Admin",status:"-",options:''},
+           { id: 2, name: 'James', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"invite sent",options:'' },
+           { id: 3, name: 'Mary', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"Rejected",options:'' },
+           { id: 4, name: 'Michael', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"Active",options:''},
+           { id: 5, name: 'Jackson', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"-",options:''},
+           { id: 6, name: 'James', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"invite sent",options:'' },
+           { id: 7, name: 'Mary', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"Rejected",options:'' },
+           { id: 8, name: 'Michael', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"Active",options:'' },
+           { id: 9, name: 'Jackson', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"-",options:''},
+           { id: 10, name: 'James', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"invite sent",options:'' },
+           { id: 11, name: 'Mary', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles: "Admin",status:"Rejected",options:'' },
+           { id: 12, name: 'Michael', email: 'jackson.jack@econsent.com', phone:'+1(415)425-5588', roles:"Admin",status:"Active",options:'' },
     ];
    
   return (
@@ -125,14 +155,17 @@ const Admin = () => {
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     </Head>
      <Sidebar />
-
+     
      <div className={styles.container}>
      <div className={styles.box} >
     
      <div className={styles.avatar}>
      <Stack direction="row" spacing={1}>
-      <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+      
+      <Avatar alt="A" src="/static/images/avatar/1.jpg" />
       </Stack>
+      <Button>logout</Button>
+      
      </div>
      
      <FontAwesomeIcon icon={faBell} style={{
@@ -169,12 +202,12 @@ const Admin = () => {
         onClick={() => {
           setModalOpen(true);
         }}>+ Add User</button>
-        {modalOpen && <Modal setOpenModal={setModalOpen} />}
+        {modalOpen && <Addusermodal setOpenModal={setModalOpen} />}
       </div>
       <div className={styles.grid}>
-      <Box sx={{ height: 400, width: '100%' }}>
+      <Box sx={{ height: 500, width: '100%' }}>
         <DataGrid
-          rows={rows}
+          rows={dataa}
           columns={columns}
           pageSize={5}
           rowsPerPageOptions={[5]}
@@ -213,8 +246,8 @@ const Admin = () => {
                   onKeyDown={handleListKeyDown}
                 >
                   <MenuItem onClick={() => {
-          setModalOpen1(true);
-        }}>View</MenuItem> {modalOpen1 && <Modal setOpenModal={setModalOpen1} />}
+          setModalOpenV(true);
+        }}>View</MenuItem> {modalOpenV && <Viewusermodal setOpenModalV={setModalOpenV} />}
                   <MenuItem onClick={handleClose}>Archive</MenuItem>
                   <MenuItem onClick={handleClose}>Delete</MenuItem>
                 </MenuList>

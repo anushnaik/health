@@ -9,7 +9,7 @@ import { Button } from "react-bootstrap";
 
 
 
-function Addprojectmodal(setOpenModal:any) {
+function Addprojectmodal({setOpenModal}:any) {
 
   const [value, setValue] = useState()
   return (
@@ -77,7 +77,7 @@ function Addprojectmodal(setOpenModal:any) {
         <div className={styles.footer}>
           <button
             onClick={() => {
-              setOpenModal1(false);
+              setOpenModal(false);
             }}
             id="cancelBtn"
           >

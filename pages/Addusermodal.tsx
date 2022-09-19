@@ -6,10 +6,7 @@ import PhoneInput from 'react-phone-number-input'
 import {useState} from 'react';
 import { Button } from "react-bootstrap";
 
-
-
-function Addusermodal(setOpenModal:any) {
-
+function Addusermodal({ setOpenModal }:any) {
   const [value, setValue] = useState()
   return (
     <div className={styles.modalBackground}>
@@ -36,17 +33,23 @@ function Addusermodal(setOpenModal:any) {
             <PhoneInput className={styles.Phone}
       placeholder="Enter Phone Number"
       value={value}
-      onChange={setValue}/>
+      onChange="setValue"/>
       </div>
       <div className={styles.column}>
       <select className={styles.Role} id="outlined-basic">
-        <option>Role</option>
+        <option>Role1</option>
         <option>Role</option>
         <option>Role</option>
         </select>
         </div>
+        <div className={styles.row}>
+        <div className={styles.column}>
+        <Button className={styles.addbtn}>+ Add another</Button>
+        </div>
+        </div>
+        
 </div>
-            <Button className={styles.addbtn}>+ Add another</Button>
+            
         </div>
         <div className={styles.footer}>
           <button

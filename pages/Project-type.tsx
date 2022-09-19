@@ -6,12 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import Head from 'next/head';
 import Paper from '@mui/material/Paper';
-import { Grid, PagingPanel, Table, TableHeaderRow, TableSelection,} from '@devexpress/dx-react-grid-material-ui';
-import { SelectionState } from '@devexpress/dx-react-grid';
 import { useRouter } from "next/router";
-import {FiMoreVertical} from "react-icons/fi";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import NorthIcon from '@mui/icons-material/North';
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
@@ -23,9 +19,11 @@ import Grow from "@mui/material/Grow";
 import Popper from "@mui/material/Popper";
 import MenuItem from "@mui/material/MenuItem";
 import MenuList from "@mui/material/MenuList";
+import axios from 'axios';
 
 const Projecttype = () => {
   const [open, setOpen] = React.useState(false);
+  const [dataa,setdataa] = useState<any>([])
   const anchorRef = React.useRef(null);
 
   const handleToggle = () => {
@@ -53,11 +51,36 @@ const Projecttype = () => {
     prevOpen.current = open;
   }, [open]);
 
+  React.useEffect(() => {
+    Api()
+  },[])
+  
+const Api= () => {
+  var token= localStorage.getItem("token")
+  console.log(token,"from itemlist")
+
+const payload= {
+  headers:{
+    Accept: "application/json",
+    "Content-Type": "application/json",
+    Authorization:`${localStorage.getItem("token")}`
+  }
+};
+try {
+const response= axios.get('https://tranquil-hamlet-54124.herokuapp.com/project_types/all',payload)
+ response.then((res:any) => {console.log("",res.data)
+ setdataa(res.data);
+});
+}
+catch(error:any){
+  console.error("Error:",error)
+}
+}
   const [modalOpen, setModalOpen] = useState(false);
-    const router = useRouter();
-    const columns = [
+  const router = useRouter();
+  const columns: GridColDef[] = [
       {
-        field: 'sname',
+        field: 'name',
         headerName: 'Name',
         width: 200,
         editable: true,
@@ -117,7 +140,7 @@ const Projecttype = () => {
     
      <div className={styles.avatar}>
      <Stack direction="row" spacing={1}>
-      <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+      <Avatar alt="A" src="/static/images/avatar/1.jpg" />
       </Stack>
      </div>
      
@@ -160,7 +183,7 @@ const Projecttype = () => {
       <div className={styles.grid}>
       <Box sx={{ height: 400, width: '100%' }}>
         <DataGrid
-          rows={rows}
+          rows={dataa}
           columns={columns}
           pageSize={5}
           rowsPerPageOptions={[5]}
@@ -212,4 +235,5 @@ const Projecttype = () => {
   </>
   )
 }
+
 export default Projecttype

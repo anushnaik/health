@@ -5,7 +5,7 @@ import {useState} from 'react';
 
 
 
-function Viewusermodal(setOpenModal:any) {
+function Viewusermodal({setOpenModal}:any) {
 
   const [value, setValue] = useState()
   return (

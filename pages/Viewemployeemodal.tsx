@@ -5,7 +5,7 @@ import {useState} from 'react';
 
 
 
-function Viewemployeemodal(setOpenModal:any) {
+function Viewemployeemodal({setOpenModal}:any) {
 
   const [value, setValue] = useState()
   return (

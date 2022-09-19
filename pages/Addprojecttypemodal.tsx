@@ -9,7 +9,7 @@ import Box from '@mui/material/Box';
 
 
 
-function Addprojecttypemodal(setOpenModal:any) {
+function Addprojecttypemodal({setOpenModal}:any) {
 
   const [value, setValue] = useState()
   return (

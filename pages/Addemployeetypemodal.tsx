@@ -2,14 +2,12 @@ import { TextField } from "@mui/material";
 import React from "react";
 import styles from '../styles/Addskillmodal.module.css';
 import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
 import {useState} from 'react';
-import { Button } from "react-bootstrap";
 import Box from '@mui/material/Box';
 
 
 
-function Addemployeetypemodal(setOpenModal:any) {
+function Addemployeetypemodal({setOpenModal}:any) {
 
   const [value, setValue] = useState()
   return (

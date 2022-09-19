@@ -2,19 +2,14 @@ import React from "react";
 import styles from '../styles/Viewusermodal.module.css';
 import {useState} from 'react';
 
-
-
-
-function Viewusermodal(setOpenModal:any) {
-
-  const [value, setValue] = useState()
+function Viewusermodal({ setOpenModalV }:any) {
   return (
     <div className={styles.modalBackground}>
       <div className={styles.modalContainer}>
         <div className={styles.titleCloseBtn}>
           <button
             onClick={() => {
-              setOpenModal(false);
+              setOpenModalV(false);
             }}
           >x
           </button>

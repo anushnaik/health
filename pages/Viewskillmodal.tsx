@@ -5,7 +5,7 @@ import {useState} from 'react';
 
 
 
-function Viewskillmodal(setOpenModal:any) {
+function Viewskillmodal({setOpenModal}:any) {
 
   const [value, setValue] = useState()
   return (

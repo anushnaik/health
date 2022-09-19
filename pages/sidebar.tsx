@@ -8,6 +8,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import { AiOutlineDown } from 'react-icons/Ai';
+import { Button } from 'react-bootstrap'
 
 const sidebar: NextPage = () => {
  
