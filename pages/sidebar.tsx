@@ -7,7 +7,6 @@ import logo from '../Images/logo.jpg'
 import Image from 'next/image'
 import Link from 'next/link'
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
-import { AiOutlineDown } from 'react-icons/Ai';
 import { Button } from 'react-bootstrap'
 
 const sidebar: NextPage = () => {
@@ -76,7 +75,7 @@ const sidebar: NextPage = () => {
         top: "2.4000244140625px" 
       }}
       /><Link href='/Settings'>
-         <a className={styles.settingl}> Settings{""} <AiOutlineDown /></a></Link>
+         <a className={styles.settingl}> Settings{""}</a></Link>
       </div>
       </li>
       <li>
