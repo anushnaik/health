@@ -29,10 +29,7 @@ function Addemployeemodal({setOpenModal}:any) {
           <div className={styles.row}>
             <div className={styles.column}>
               Phone Number
-              <PhoneInput className={styles.Phone}
-                placeholder="Enter Phone Number"
-                value={value}
-                onChange={setValue} />
+              <TextField className={styles.Phone} id="outlined-basic" placeholder="Phone Number" variant="outlined" size="small" /><br />
             </div>
             <div className={styles.column}>
               Joining Date
